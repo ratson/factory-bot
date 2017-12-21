@@ -155,7 +155,7 @@ export default class FactoryGirl {
   cleanUp() {
     const createdArray = [];
     for (const c of this.created) {
-      createdArray.push(c);
+      createdArray.unshift(c);
     }
     const promise = createdArray.reduce(
       (prev, [adapter, model]) =>
