@@ -1,11 +1,7 @@
 {
-  "name": "factory-girl",
+  "name": "factory-bot",
   "description": "A factory library for Node.js and JavaScript inspired by factory_girl",
   "main": "./src/index",
-  "author": [
-    "@aexmachina",
-    "@chetanism"
-  ],
   "babel": {
     "presets": [
       "es2015",
@@ -26,16 +22,16 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/aexmachina/factory-girl.git"
+    "url": "http://github.com/ratson/factory-bot.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "http://github.com/aexmachina/factory-girl/issues"
+    "url": "http://github.com/ratson/factory-bot/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/aexmachina/factory-girl/raw/master/LICENSE"
+      "url": "http://github.com/ratson/factory-bot/raw/master/LICENSE"
     }
   ],
   "dependencies": {
