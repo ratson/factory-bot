@@ -4,6 +4,7 @@ export { default as ObjectAdapter } from './adapters/ObjectAdapter'
 export { default as BookshelfAdapter } from './adapters/BookshelfAdapter'
 export { default as DefaultAdapter } from './adapters/DefaultAdapter'
 export { default as MongooseAdapter } from './adapters/MongooseAdapter'
+export { default as MonkAdapter } from './adapters/MonkAdapter'
 export { default as SequelizeAdapter } from './adapters/SequelizeAdapter'
 export { default as ReduxORMAdapter } from './adapters/ReduxORMAdapter'
 
