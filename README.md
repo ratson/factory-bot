@@ -1,4 +1,4 @@
-# factory-girl
+# factory-bot
 
 [![Build Status](https://travis-ci.org/aexmachina/factory-girl.png)](https://travis-ci.org/aexmachina/factory-girl)
 
@@ -9,11 +9,8 @@
 Node.js:
 
 ```bash
-npm install factory-girl
+npm install factory-bot
 ```
-
-To use `factory-girl` in the browser or other JavaScript environments, there are
-builds for numerous module systems in the `dist/` directory.
 
 ## Usage
 
@@ -303,9 +300,4 @@ Version 4.0 is a complete rewrite with thanks to @chetanism.
 
 ## License
 
-Copyright (c) 2016 Chetan Verma.  
-Copyright (c) 2014 Simon Wade.
-Copyright (c) 2011 Peter Jihoon Kim.  
-
-This software is licensed under the [MIT
-License](http://github.com/aexmachina/factory-girl/raw/master/LICENSE.txt).
+This software is licensed under the [MIT License](./LICENSE.txt).
