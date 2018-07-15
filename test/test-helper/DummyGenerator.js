@@ -1,9 +1,9 @@
-
 export default class DummyGenerator {
   constructor() {
-    this.constructorCalled = true;
+    this.constructorCalled = true
   }
+
   generate() {
-    return 'hello';
+    return 'hello'
   }
 }

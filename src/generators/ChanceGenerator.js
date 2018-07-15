@@ -1,14 +1,13 @@
+import Chance from 'chance'
+import Generator from './Generator'
 
-import Generator from './Generator';
-import Chance from 'chance';
-
-const chance = new Chance();
+const chance = new Chance()
 
 export default class ChanceGenerator extends Generator {
   generate(chanceMethod, ...options) {
     if (typeof chance[chanceMethod] !== 'function') {
-      throw new Error('Invalid chance method requested');
+      throw new TypeError('Invalid chance method requested')
     }
-    return chance[chanceMethod](...options);
+    return chance[chanceMethod](...options)
   }
 }

@@ -1,4 +1,4 @@
-import { attr, Model } from 'redux-orm';
+import { attr, Model } from 'redux-orm'
 
 export default class DummyReduxORMModel extends Model {
   static get fields() {
@@ -7,10 +7,10 @@ export default class DummyReduxORMModel extends Model {
       type: attr(),
       name: attr(),
       country: attr(),
-    };
+    }
   }
 
   static get modelName() {
-    return 'DummyReduxORMModel';
+    return 'DummyReduxORMModel'
   }
 }
