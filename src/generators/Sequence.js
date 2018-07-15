@@ -9,17 +9,7 @@ function generateId() {
   return id
 }
 
-export default class Sequence extends Generator {
-  static sequences = {}
-
-  static reset(id = null) {
-    if (!id) {
-      Sequence.sequences = {}
-    } else {
-      Sequence.sequences[id] = undefined
-    }
-  }
-
+class Sequence extends Generator {
   generate(id = null, callback = null) {
     if (typeof id === 'function') {
       callback = id
@@ -31,3 +21,15 @@ export default class Sequence extends Generator {
     return callback ? callback(next) : next
   }
 }
+
+Sequence.sequences = {}
+
+Sequence.reset = (id = null) => {
+  if (!id) {
+    Sequence.sequences = {}
+  } else {
+    Sequence.sequences[id] = undefined
+  }
+}
+
+export default Sequence

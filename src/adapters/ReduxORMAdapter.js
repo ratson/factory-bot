@@ -3,6 +3,7 @@ import DefaultAdapter from './DefaultAdapter'
 export default class ReduxORMAdapter extends DefaultAdapter {
   constructor(session) {
     super()
+
     this.session = session
   }
 

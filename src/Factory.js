@@ -1,15 +1,12 @@
 import asyncPopulate from './utils/asyncPopulate'
 
 export default class Factory {
-  name = null
-
-  Model = null
-
-  initializer = null
-
-  options = {}
-
   constructor(Model, initializer, options = {}) {
+    this.name = null
+    this.Model = null
+    this.initializer = null
+    this.options = {}
+
     if (!Model) {
       throw new Error('Invalid Model constructor passed to the factory')
     }

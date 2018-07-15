@@ -22,15 +22,12 @@ function deprecate(method, see) {
 }
 
 export default class FactoryGirl {
-  factories = {}
-
-  options = {}
-
-  adapters = {}
-
-  created = new Set()
-
   constructor(options = {}) {
+    this.factories = {}
+    this.options = {}
+    this.adapters = {}
+    this.created = new Set()
+
     this.assoc = generatorThunk(this, Assoc)
     this.assocMany = generatorThunk(this, AssocMany)
     this.assocBuild = deprecate('assocBuild', 'assocAttrs')
