@@ -3,7 +3,7 @@
   "description": "A factory library for Node.js and JavaScript inspired by factory_girl",
   "main": "./main.js",
   "module": "./src/index",
-  "version": "5.1.1",
+  "version": "5.2.0",
   "keywords": [
     "factory",
     "test",
