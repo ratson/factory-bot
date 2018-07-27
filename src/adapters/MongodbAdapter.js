@@ -7,20 +7,21 @@ export default class MongodbAdapter extends ObjectAdapter {
     this.db = db
   }
 
-  async build(Model, props) {
-    this.db.collection(Model).insertOne(props)
-    return props
+  build(Model, props) {
+    const model = {}
+    this.set(props, model, Model)
+    return model
   }
 
   async save(model, Model) {
     const c = this.db.collection(Model)
 
     if (model._id) {
-      await c.findOneAndUpdate(model._id, model, { upsert: true })
+      await c.findOneAndUpdate(model._id, { $set: model }, { upsert: true })
       return c.findOne(model._id)
     }
-    const { _id } = await c.insert(model)
-    return c.findOne(_id)
+    const { insertedId } = await c.insertOne(model)
+    return c.findOne(insertedId)
   }
 
   async destroy(model, Model) {
