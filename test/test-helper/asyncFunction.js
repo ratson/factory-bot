@@ -1,10 +1,3 @@
-const asyncFunction = func => async done => {
-  try {
-    await func()
-    done()
-  } catch (e) {
-    done(e)
-  }
-}
+const asyncFunction = func => func
 
 export default asyncFunction
