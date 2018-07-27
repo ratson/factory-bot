@@ -31,21 +31,6 @@ describe('FactoryGirl', () => {
       expect(factoryGirl.getAdapter()).to.be.an.instanceof(DefaultAdapter)
     })
   })
-  describe('deprecated methods', () => {
-    const factoryGirl = new FactoryGirl()
-    it('throws error on calling deprecated methods', () => {
-      function assocBuild() {
-        factoryGirl.assocBuild('whatever')
-      }
-
-      function assocBuildMany() {
-        factoryGirl.assocBuildMany('whatever', 2)
-      }
-
-      expect(assocBuild).to.throw(Error)
-      expect(assocBuildMany).to.throw(Error)
-    })
-  })
   describe('#define', () => {
     const factoryGirl = new FactoryGirl()
     it('can define factory', () => {

@@ -13,14 +13,6 @@ export function generatorThunk(factoryGirl, SomeGenerator) {
   return (...args) => () => generator.generate(...args)
 }
 
-function deprecate(method, see) {
-  return () => {
-    throw new Error(
-      `The ${method} method has been deprecated, use ${see} instead`,
-    )
-  }
-}
-
 export default class FactoryGirl {
   constructor(options = {}) {
     this.factories = {}
@@ -30,8 +22,6 @@ export default class FactoryGirl {
 
     this.assoc = generatorThunk(this, Assoc)
     this.assocMany = generatorThunk(this, AssocMany)
-    this.assocBuild = deprecate('assocBuild', 'assocAttrs')
-    this.assocBuildMany = deprecate('assocBuildMany', 'assocAttrsMany')
     this.assocAttrs = generatorThunk(this, AssocAttrs)
     this.assocAttrsMany = generatorThunk(this, AssocAttrsMany)
     this.seq = this.sequence = (...args) =>
