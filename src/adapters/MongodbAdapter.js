@@ -3,6 +3,9 @@ import ObjectAdapter from './ObjectAdapter'
 const __Model__ = Symbol('Model')
 
 const enhanceModel = Model => model => {
+  if (!model) {
+    return model
+  }
   Object.defineProperty(model, __Model__, {
     enumerable: false,
     value: Model,
