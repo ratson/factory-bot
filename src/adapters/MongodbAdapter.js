@@ -1,5 +1,15 @@
 import ObjectAdapter from './ObjectAdapter'
 
+const __Model__ = Symbol('Model')
+
+const enhanceModel = Model => model => {
+  Object.defineProperty(model, __Model__, {
+    enumerable: false,
+    value: Model,
+  })
+  return model
+}
+
 export default class MongodbAdapter extends ObjectAdapter {
   constructor(db) {
     super()
@@ -18,13 +28,13 @@ export default class MongodbAdapter extends ObjectAdapter {
 
     if (model._id) {
       await c.findOneAndUpdate(model._id, { $set: model }, { upsert: true })
-      return c.findOne(model._id)
+      return c.findOne(model._id).then(enhanceModel(Model))
     }
     const { insertedId } = await c.insertOne(model)
-    return c.findOne(insertedId)
+    return c.findOne(insertedId).then(enhanceModel(Model))
   }
 
-  async destroy(model, Model) {
-    return this.db.collection(Model).deleteOne(model)
+  async destroy(model) {
+    return this.db.collection(model[__Model__]).deleteOne(model)
   }
 }
