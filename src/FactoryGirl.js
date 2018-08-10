@@ -194,11 +194,13 @@ export default class FactoryGirl {
     for (const c of this.created) {
       createdArray.unshift(c)
     }
-    const promise = createdArray.reduce(
-      (prev, [adapter, model]) =>
-        prev.then(() => adapter.destroy(model, model.constructor)),
-      Promise.resolve(),
-    )
+    const promise = createdArray.reduce(async (prev, [adapter, model]) => {
+      await prev
+      if (model === null) {
+        return
+      }
+      await adapter.destroy(model, model.constructor)
+    }, Promise.resolve())
     this.created.clear()
     this.resetSeq()
     return promise
