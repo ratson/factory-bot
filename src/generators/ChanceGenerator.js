@@ -5,6 +5,10 @@ const chance = new Chance()
 
 export default class ChanceGenerator extends Generator {
   generate(chanceMethod, ...options) {
+    if (typeof chanceMethod === 'function') {
+      return chanceMethod(chance, ...options)
+    }
+
     if (typeof chance[chanceMethod] !== 'function') {
       throw new TypeError('Invalid chance method requested')
     }

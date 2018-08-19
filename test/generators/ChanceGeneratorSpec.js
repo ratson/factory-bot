@@ -40,5 +40,17 @@ describe('ChanceGenerator', () => {
         expect(val.length).to.equal(2)
       }),
     )
+
+    it(
+      'supports function callback',
+      asyncFunction(async () => {
+        const chance = new ChanceGenerator({})
+        const val = await chance.generate(c =>
+          c.pickset(['one', 'two', 'three'], 2),
+        )
+        expect(val).to.exist
+        expect(val.length).to.equal(2)
+      }),
+    )
   })
 })
