@@ -24,7 +24,7 @@
   ],
   "dependencies": {
     "chance": "^1.0.16",
-    "esm": "^3.0.77"
+    "esm": "3.0.76"
   },
   "devDependencies": {
     "bluebird": "^3.5.1",
