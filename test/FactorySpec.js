@@ -269,7 +269,11 @@ describe('Factory', () => {
         const dummyAttrs = {}
         const dummyBuildOptions = {}
         await objFactory.create(dummyAdapter, dummyAttrs, dummyBuildOptions)
-        expect(spy).to.have.been.calledWith(dummyAttrs, dummyBuildOptions)
+        expect(spy).to.have.been.calledWith(
+          dummyAdapter,
+          dummyAttrs,
+          dummyBuildOptions,
+        )
         objFactory.build.restore()
       }),
     )

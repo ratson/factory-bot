@@ -48,9 +48,9 @@
     "redux-orm": "^0.12.1",
     "sequelize": "^3.24.0",
     "should": "^13.2.3",
-    "sinon": "^6.2.0",
-    "sinon-chai": "^3.2.0",
-    "sqlite3": "^4.0.2"
+    "sinon": "^7.1.1",
+    "sinon-chai": "^3.3.0",
+    "sqlite3": "^4.0.4"
   },
   "scripts": {
     "lint": "eslint src test",
