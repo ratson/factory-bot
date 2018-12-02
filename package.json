@@ -23,27 +23,27 @@
     }
   ],
   "dependencies": {
-    "chance": "^1.0.16",
-    "esm": "3.0.82"
+    "chance": "^1.0.17",
+    "esm": "3.0.84"
   },
   "devDependencies": {
-    "bluebird": "^3.5.2",
+    "bluebird": "^3.5.3",
     "bookshelf": "^0.13.3",
-    "chai": "^4.1.2",
+    "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "eslint": "^5.5.0",
-    "eslint-config-concise": "^0.30.1",
-    "eslint-config-concise-esnext": "^0.30.1",
-    "eslint-config-concise-import": "^0.30.1",
-    "eslint-config-concise-mocha": "^0.30.1",
-    "husky": "^0.14.3",
+    "eslint": "^5.9.0",
+    "eslint-config-concise": "^0.34.0",
+    "eslint-config-concise-esnext": "^0.34.0",
+    "eslint-config-concise-import": "^0.34.0",
+    "eslint-config-concise-mocha": "^0.34.0",
+    "husky": "^1.2.0",
     "istanbul": "^1.0.0-alpha.2",
     "knex": "^0.15.2",
-    "lint-staged": "^7.2.2",
+    "lint-staged": "^8.1.0",
     "mocha": "^5.2.0",
     "mocha-eslint": "^4.1.0",
-    "mongodb": "^3.1.4",
-    "mongoose": "^5.2.14",
+    "mongodb": "^3.1.10",
+    "mongoose": "^5.3.14",
     "prettier-eslint-cli": "^5.0.0-beta.0",
     "redux-orm": "^0.12.1",
     "sequelize": "^3.24.0",
@@ -55,8 +55,7 @@
   "scripts": {
     "lint": "eslint src test",
     "test": "NODE_ENV=test mocha",
-    "prepublish": "npm run test",
-    "precommit": "lint-staged"
+    "prepublish": "npm test"
   },
   "eslintConfig": {
     "extends": [
@@ -70,6 +69,11 @@
       "no-param-reassign": "off",
       "no-plusplus": "off",
       "no-unused-expressions": "off"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
