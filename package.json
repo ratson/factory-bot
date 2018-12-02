@@ -6,10 +6,13 @@
   "version": "6.1.2",
   "keywords": [
     "factory",
+    "factory-bot",
+    "factory-girl",
     "test",
     "bdd",
     "tdd",
-    "fixture"
+    "fixture",
+    "mongodb"
   ],
   "repository": "https://github.com/ratson/factory-bot.git",
   "license": "MIT",
