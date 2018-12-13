@@ -281,7 +281,7 @@ factory.define('model', MyModel);
 You can create multiple factories which have different settings:
 
 ```javascript
-let anotherFactory = new factory.FactoryBot();
+let anotherFactory = new factory.FactoryGirl();
 anotherFactory.setAdapter(new MongooseAdapter()); // use the Mongoose adapter
 ```
 
