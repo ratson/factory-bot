@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/aexmachina/factory-girl.png)](https://travis-ci.org/aexmachina/factory-girl)
 
-`factory-girl` is a factory library for [Node.js](http://nodejs.org/) and the browser that is inspired by [Factory\_girl](http://github.com/thoughtbot/factory_girl). It works asynchronously and supports associations and the use of functions for generating attributes.
+`factory-bot` is a factory library for [Node.js](http://nodejs.org/) and the browser that is inspired by [Factory\_girl](http://github.com/thoughtbot/factory_girl). It works asynchronously and supports associations and the use of functions for generating attributes.
 
 ## Installation
 
@@ -20,7 +20,7 @@ user factory.
 Here's the crash course:
 
 ```javascript
-const factory = require('factory-girl').factory;
+const factory = require('factory-bot').factory;
 const User    = require('../models/user');
 
 factory.define('user', User, {
@@ -150,7 +150,7 @@ factory.build('expiredUser').then(user => {
 
 ### `#extend(parent, name, initializer, options = {})`
 
-The `#extend` method takes the same options as `#define` except you 
+The `#extend` method takes the same options as `#define` except you
 can provide a different `Model` using `options.model`.
 
 ## Using Factories
@@ -247,9 +247,9 @@ specific models, or as the 'default adapter', which is used for any models for w
 adapter has not been specified. See the adapter docs for usage, but typical usage is:
 
 ```javascript
-const FactoryGirl = require('factory-girl');
-const factory = FactoryGirl.factory;
-const adapter = new FactoryGirl.MongooseAdapter();
+const FactoryBot = require('factory-bot');
+const factory = FactoryBot.factory;
+const adapter = new FactoryBot.MongooseAdapter();
 
 // use the mongoose adapter as the default adapter
 factory.setAdapter(adapter);
