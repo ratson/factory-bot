@@ -287,16 +287,10 @@ anotherFactory.setAdapter(new MongooseAdapter()); // use the Mongoose adapter
 
 ## History
 
-This module started out as a fork of
-[factory-lady](https://github.com/petejkim/factory-lady), but the fork deviated quite a
-bit. This module uses an adapter to talk to your models so it can support different ORMs
-such as [Bookshelf](https://github.com/aexmachina/factory-girl-bookshelf),
-[Sequelize](https://github.com/aexmachina/factory-girl-sequelize),
-[JugglingDB](https://github.com/rehanift/factory-girl-jugglingdb), and
-[Mongoose](https://github.com/jesseclark/factory-girl-mongoose) (and doesn't use `throw`
-for errors that might occur during save).
+This module is a fork or [factory-girl](https://github.com/aexmachina/factory-girl), which indeed a fork of
+[factory-lady](https://github.com/petejkim/factory-lady).
 
-Version 4.0 is a complete rewrite with thanks to @chetanism.
+This fork keeps the same API as the original module, but with bugfixes and some extra features.
 
 ## License
 
