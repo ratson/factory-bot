@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "bluebird": "^3.5.3",
-    "bookshelf": "^0.13.3",
+    "bookshelf": "^0.14.2",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "eslint": "^5.9.0",
@@ -41,7 +41,7 @@
     "eslint-config-concise-mocha": "^0.36.0",
     "husky": "^1.2.0",
     "istanbul": "^1.0.0-alpha.2",
-    "knex": "^0.15.2",
+    "knex": "^0.16.3",
     "lint-staged": "^8.1.0",
     "mocha": "^5.2.0",
     "mocha-eslint": "^5.0.0",
