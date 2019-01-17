@@ -35,16 +35,16 @@
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "eslint": "^5.9.0",
-    "eslint-config-concise": "^0.34.0",
-    "eslint-config-concise-esnext": "^0.34.0",
-    "eslint-config-concise-import": "^0.34.0",
-    "eslint-config-concise-mocha": "^0.34.0",
+    "eslint-config-concise": "^0.36.0",
+    "eslint-config-concise-esnext": "^0.36.0",
+    "eslint-config-concise-import": "^0.36.0",
+    "eslint-config-concise-mocha": "^0.36.0",
     "husky": "^1.2.0",
     "istanbul": "^1.0.0-alpha.2",
     "knex": "^0.15.2",
     "lint-staged": "^8.1.0",
     "mocha": "^5.2.0",
-    "mocha-eslint": "^4.1.0",
+    "mocha-eslint": "^5.0.0",
     "mongodb": "^3.1.10",
     "mongoose": "^5.3.14",
     "prettier-eslint-cli": "^5.0.0-beta.0",
@@ -85,8 +85,5 @@
       "eslint --fix",
       "git add"
     ]
-  },
-  "resolutions": {
-    "eslint": ">= 5.3.0"
   }
 }
