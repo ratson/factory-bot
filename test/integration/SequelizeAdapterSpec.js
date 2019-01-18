@@ -3,7 +3,7 @@ import Sequelize from 'sequelize'
 import { expect } from 'chai'
 import SequelizeAdapter from '../../src/adapters/SequelizeAdapter'
 
-const sequelize = new Sequelize(undefined, undefined, undefined, {
+const sequelize = new Sequelize({
   dialect: 'sqlite',
   storage: ':memory:',
   logging: false,
@@ -23,7 +23,7 @@ describe('SequelizeAdapterIntegration', () => {
   it('builds models and access attributes correctly', done => {
     const kitten = adapter.build(Kitten, { name: 'fluffy' })
 
-    expect(kitten).to.be.instanceof(Kitten.Instance)
+    expect(kitten).to.be.instanceof(Kitten)
     let name = adapter.get(kitten, 'name', Kitten)
     expect(name).to.be.equal('fluffy')
 
