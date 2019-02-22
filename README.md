@@ -51,7 +51,9 @@ factory.define('user', User, {
   // seq is an alias for sequence
   email: factory.seq('User.email', (n) => `user${n}@ymail.com`),
 
-  // use the chance(http://chancejs.com/) library to generate real-life like data
+  // use the chance(http://chancejs.com/) library to generate
+  // real-life like data.
+  // For repeatable results, call factory.chance.seed(<value>) first.
   about: factory.chance('sentence'),
 
   // use assoc to associate with other models

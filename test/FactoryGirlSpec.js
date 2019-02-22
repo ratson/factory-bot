@@ -744,4 +744,18 @@ describe('FactoryGirl', () => {
       })
     })
   })
+  describe('#chance', () => {
+    const factoryGirl = new FactoryGirl()
+    it('follows a seed', () => {
+      const makeName = factoryGirl.chance('word')
+
+      factoryGirl.chance.seed(42)
+      const firstWords = new Array(5).fill().map(makeName)
+
+      factoryGirl.chance.seed(42)
+      const secondWords = new Array(5).fill().map(makeName)
+
+      expect(firstWords).to.deep.equal(secondWords)
+    })
+  })
 })
