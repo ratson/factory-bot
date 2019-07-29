@@ -83,7 +83,7 @@ export default class Factory {
       buildOptionsObject = buildOptionsArray
       buildOptionsArray = []
     }
-    if (typeof num !== 'number' || num < 1) {
+    if (typeof num !== 'number' || num < 0) {
       return Promise.reject(new Error('Invalid number of objects requested'))
     }
     if (!Array.isArray(attrsArray)) {
