@@ -58,7 +58,7 @@
   "scripts": {
     "lint": "eslint src test",
     "test": "NODE_ENV=test mocha",
-    "prepublish": "npm test"
+    "prepublishOnly": "npm test"
   },
   "eslintConfig": {
     "extends": [
