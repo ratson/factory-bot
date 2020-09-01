@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "chance": "^1.0.18",
-    "esm": "3.1.1"
+    "esm": "3.2.25"
   },
   "devDependencies": {
     "bluebird": "^3.5.3",
@@ -43,7 +43,7 @@
     "istanbul": "^1.0.0-alpha.2",
     "knex": "^0.16.3",
     "lint-staged": "^8.1.0",
-    "mocha": "^5.2.0",
+    "mocha": "^8.1.3",
     "mocha-eslint": "^5.0.0",
     "mongodb": "^3.1.12",
     "mongoose": "^5.4.6",
@@ -85,5 +85,10 @@
       "eslint --fix",
       "git add"
     ]
+  },
+  "mocha": {
+    "recursive": true,
+    "require": "esm",
+    "exit": true
   }
 }
