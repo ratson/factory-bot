@@ -58,6 +58,7 @@ export default class FactoryGirl {
     }
     const parentFactory = this.getFactory(parent, true)
     const Model = options.model || parentFactory.Model
+    const jointOptions = { ...parentFactory.options, ...options }
     let jointInitializer
 
     function resolveInitializer(initializer, buildOptions) {
@@ -88,7 +89,7 @@ export default class FactoryGirl {
     const factory = (this.factories[name] = new Factory(
       Model,
       jointInitializer,
-      options,
+      jointOptions,
     ))
     return factory
   }
@@ -101,11 +102,10 @@ export default class FactoryGirl {
     const adapter = this.getAdapter(name)
     return this.getFactory(name)
       .build(adapter, attrs, buildOptions)
-      .then(
-        model =>
-          (this.options.afterBuild
-            ? this.options.afterBuild(model, attrs, buildOptions)
-            : model),
+      .then(model =>
+        (this.options.afterBuild
+          ? this.options.afterBuild(model, attrs, buildOptions)
+          : model),
       )
   }
 
@@ -114,11 +114,10 @@ export default class FactoryGirl {
     return this.getFactory(name)
       .create(adapter, attrs, buildOptions)
       .then(createdModel => this.addToCreatedList(adapter, createdModel))
-      .then(
-        model =>
-          (this.options.afterCreate
-            ? this.options.afterCreate(model, attrs, buildOptions)
-            : model),
+      .then(model =>
+        (this.options.afterCreate
+          ? this.options.afterCreate(model, attrs, buildOptions)
+          : model),
       )
   }
 
@@ -130,15 +129,14 @@ export default class FactoryGirl {
     const adapter = this.getAdapter(name)
     return this.getFactory(name)
       .buildMany(adapter, num, attrs, buildOptions)
-      .then(
-        models =>
-          (this.options.afterBuild
-            ? Promise.all(
-              models.map(model =>
-                this.options.afterBuild(model, attrs, buildOptions),
-              ),
-            )
-            : models),
+      .then(models =>
+        (this.options.afterBuild
+          ? Promise.all(
+            models.map(model =>
+              this.options.afterBuild(model, attrs, buildOptions),
+            ),
+          )
+          : models),
       )
   }
 
@@ -147,15 +145,14 @@ export default class FactoryGirl {
     return this.getFactory(name)
       .createMany(adapter, num, attrs, buildOptions)
       .then(models => this.addToCreatedList(adapter, models))
-      .then(
-        models =>
-          (this.options.afterCreate
-            ? Promise.all(
-              models.map(model =>
-                this.options.afterCreate(model, attrs, buildOptions),
-              ),
-            )
-            : models),
+      .then(models =>
+        (this.options.afterCreate
+          ? Promise.all(
+            models.map(model =>
+              this.options.afterCreate(model, attrs, buildOptions),
+            ),
+          )
+          : models),
       )
   }
 
