@@ -3,7 +3,7 @@
   "description": "A factory library for Node.js and JavaScript inspired by factory_girl",
   "main": "./main.js",
   "module": "./src/index",
-  "version": "6.1.4",
+  "version": "6.2.0",
   "keywords": [
     "factory",
     "factory-bot",
@@ -67,7 +67,10 @@
       "concise-import"
     ],
     "rules": {
-      "arrow-parens": ["error", "as-needed"],
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
       "class-methods-use-this": "off",
       "default-param-last": "off",
       "function-paren-newline": "off",
