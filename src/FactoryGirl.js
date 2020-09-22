@@ -8,9 +8,13 @@ import ChanceGenerator from './generators/ChanceGenerator'
 import OneOf from './generators/OneOf'
 import DefaultAdapter from './adapters/DefaultAdapter'
 
+function wrapGenerator(generator) {
+  return (...args) => () => generator.generate(...args)
+}
+
 export function generatorThunk(factoryGirl, SomeGenerator) {
   const generator = new SomeGenerator(factoryGirl)
-  return (...args) => () => generator.generate(...args)
+  return wrapGenerator(generator)
 }
 
 export default class FactoryGirl {
@@ -29,7 +33,13 @@ export default class FactoryGirl {
     this.resetSeq = this.resetSequence = id => {
       Sequence.reset(id)
     }
-    this.chance = generatorThunk(this, ChanceGenerator)
+
+    const chance = new ChanceGenerator(this)
+    this.chance = wrapGenerator(chance)
+    this.chance.seed = value => {
+      chance.seed(value)
+    }
+
     this.oneOf = generatorThunk(this, OneOf)
 
     this.defaultAdapter = new DefaultAdapter()
