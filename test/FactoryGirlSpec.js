@@ -93,6 +93,24 @@ describe('FactoryGirl', () => {
       }
       expect(nameRepeated).to.throw(Error)
     })
+    it('inherits buildOptions', async () => {
+      const spy = sinon.spy()
+      const dummyBuildOptions = { afterBuild: spy }
+      factoryGirl.define(
+        'parentWithAfterBuild',
+        Object,
+        {
+          parent: true,
+        },
+        dummyBuildOptions,
+      )
+      factoryGirl.extend('parentWithAfterBuild', 'childWithParentAfterBuild', {
+        child: true,
+        override: 'child',
+      })
+      await factoryGirl.build('childWithParentAfterBuild')
+      expect(spy).to.have.been.calledOnce
+    })
     it('can extend with an initializer function', async () => {
       factoryGirl.define('parentWithObjectInitializer', Object, {
         parent: true,
