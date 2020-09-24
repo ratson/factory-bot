@@ -1,13 +1,14 @@
 name: CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         node: ['10', '12', '13', '14']
+        os: [ubuntu-latest, windows-latest, macos-latest]
     name: Test with Node ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v2
@@ -16,4 +17,5 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: npm install
+      - run: npm run lint
       - run: npm test
