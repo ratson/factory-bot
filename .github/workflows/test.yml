@@ -12,6 +12,11 @@ jobs:
     name: Test with Node ${{ matrix.node }} on ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
+      - run: |
+          git config --global core.eol lf
+          git config --global core.autocrlf input
+          git rm -rf --cached .
+          git reset HEAD --hard
       - name: Setup node
         uses: actions/setup-node@v1
         with:
