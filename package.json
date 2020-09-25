@@ -34,6 +34,7 @@
     "bookshelf": "^1.2.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "cross-env": "^7.0.2",
     "eslint": "^7.9.0",
     "eslint-config-concise": "^0.38.0",
     "eslint-config-concise-esnext": "^0.38.0",
@@ -57,7 +58,7 @@
   },
   "scripts": {
     "lint": "eslint src test",
-    "test": "NODE_ENV=test mocha",
+    "test": "cross-env NODE_ENV=test mocha",
     "prepublishOnly": "npm test"
   },
   "eslintConfig": {
