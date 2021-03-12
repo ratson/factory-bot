@@ -2,5 +2,5 @@ import lint from 'mocha-eslint'
 
 lint(['src', 'test'], {
   formatter: 'stylish',
-  timeout: 30000,
+  timeout: 60 * 1000,
 })
