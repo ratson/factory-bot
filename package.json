@@ -3,6 +3,7 @@
   "description": "A factory library for Node.js and JavaScript inspired by factory_girl",
   "main": "./main.js",
   "module": "./src/index",
+  "types": "index.d.ts",
   "version": "6.2.0",
   "keywords": [
     "factory",
