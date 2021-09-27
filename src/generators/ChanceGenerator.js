@@ -4,7 +4,12 @@ import Generator from './Generator'
 export default class ChanceGenerator extends Generator {
   constructor(factoryGirl, seedValue) {
     super(factoryGirl)
-    this.seed(seedValue)
+
+    if (seedValue) {
+      this.seed(seedValue)
+    } else {
+      this.chance = new Chance()
+    }
   }
 
   seed(value) {

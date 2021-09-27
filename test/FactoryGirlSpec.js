@@ -775,5 +775,12 @@ describe('FactoryGirl', () => {
 
       expect(firstWords).to.deep.equal(secondWords)
     })
+    it('does not follow a seed when none is provided', () => {
+      const makeName = factoryGirl.chance('word')
+      const setSeedWords = ['wunruk', 'lihcug', 'atpik', 'cecbetzav', 'notpodop']
+
+      const randomWords = new Array(5).fill().map(makeName)
+      expect(randomWords).to.not.deep.equal(setSeedWords)
+    })
   })
 })
