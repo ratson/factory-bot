@@ -17,6 +17,13 @@
   ],
   "repository": "https://github.com/ratson/factory-bot.git",
   "license": "MIT",
+  "files": [
+    "*.md",
+    "*.txt",
+    "*.ts",
+    "*.js",
+    "src"
+  ],
   "bugs": {
     "url": "https://github.com/ratson/factory-bot/issues"
   },
