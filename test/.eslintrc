@@ -1,5 +1,6 @@
 {
-  "extends": [
-    "concise-mocha"
-  ]
+  "extends": ["concise-mocha"],
+  "rules": {
+    "import/no-named-as-default-member": "warn"
+  }
 }
