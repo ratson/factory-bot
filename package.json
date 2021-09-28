@@ -4,7 +4,7 @@
   "main": "./main.js",
   "module": "./src/index",
   "types": "index.d.ts",
-  "version": "6.3.0",
+  "version": "6.3.1",
   "keywords": [
     "factory",
     "factory-bot",
